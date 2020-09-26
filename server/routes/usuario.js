@@ -20,7 +20,7 @@ app.get('/usuario', verificaToken, (req, res) => {
 
 				if (err) {
 					return res.status(400).json({
-						ok: true,
+						ok: false,
 						err
 					})
 				}
@@ -56,7 +56,7 @@ app.post('/usuario', [verificaToken, verificaAdmin_Role], (req, res) => {
 
 		if (err) {
 			return res.status(400).json({
-				ok: true,
+				ok: false,
 				err
 			})
 		}
@@ -81,7 +81,7 @@ app.put('/usuario/:id', [verificaToken, verificaAdmin_Role], (req, res) => {
 
 		if (err) {
 			return res.status(400).json({
-				ok: true,
+				ok: false,
 				err
 			})
 		}
@@ -118,7 +118,7 @@ app.delete('/usuario/:id',  [verificaToken, verificaAdmin_Role], (req, res) => {
 
 		if (err) {
 			return res.status(400).json({
-				ok: true,
+				ok: false,
 				err
 			});
 		}
